@@ -14,6 +14,13 @@ const userSchema = new Schema({
   work: { type: String },
 
   skills: { type: String },
+  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+
+  // following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  // followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  // followedTags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
+  // bookmarks: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
 });
 
-module.esports = mongoose.model("user", userSchema);
+module.esports = mongoose.model("User", userSchema);
